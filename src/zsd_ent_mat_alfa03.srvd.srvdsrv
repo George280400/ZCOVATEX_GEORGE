@@ -1,0 +1,7 @@
+@EndUserText.label: 'Entrada de materiales'
+define service Zsd_ent_mat_alfa03 {
+  expose Z_C_ENT_MAT_ALFA03     as EntradaMaterial;
+  expose Z_I_DET_ENT_MAT_ALFA03;
+  expose Z_C_DET_ENT_MAT_ALFA03 as DetallesEntradaMaterial;
+  expose Z_I_ENT_MAT_ALFA03;
+}

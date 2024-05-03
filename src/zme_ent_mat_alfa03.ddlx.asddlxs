@@ -1,0 +1,66 @@
+@Metadata.layer: #CORE
+@Search.searchable: true
+@UI: {
+    headerInfo: {
+    typeName: 'Entrada',
+    typeNamePlural: 'Entrada de Materiales',
+    title: {
+        type: #STANDARD,
+        value: 'FolioEntrada'
+    }
+    }
+}
+annotate view Z_C_ENT_MAT_ALFA03 with
+{
+ 
+
+@UI:{facet: [{
+      id: 'FolioEntrada',
+      purpose: #STANDARD,
+      type: #IDENTIFICATION_REFERENCE,
+      label: 'Entrada Material',
+      position: 10 },
+      {
+      id: 'DetallesEntrada',
+      purpose: #STANDARD,
+      type: #LINEITEM_REFERENCE,
+      label: 'Detalles de Entrada Material',
+      position: 20, targetElement: '_DetallesEntrada'
+      }
+  ],
+   lineItem: [{ position: 10,
+                 importance: #HIGH }],
+                 identification: [{ position: 10, label: 'Folio Entrada' }]
+  }
+
+  @Search.defaultSearchElement: true
+  FolioEntrada;
+    @UI:{
+  lineItem: [{ position: 20,
+                   importance: #HIGH }],
+                   identification: [{ position: 20, label: 'ID Proveedor' }],
+                   selectionField: [{ position: 20}]
+  }
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'Z_I_PROVEDORES_ALFA03', element: 'IdProvedor' } }]
+  IdProvedor;
+  @UI:{
+  lineItem: [{ position: 30,
+                   importance: #HIGH }],
+                   identification: [{ position: 30, label: 'Nombre Proveedor' }]
+  }
+  Nombre;
+  @UI:{
+  lineItem: [{ position: 40,
+                   importance: #HIGH }],
+                   identification: [{ position: 40, label: 'Fecha de Entrada' }]
+  }
+  FechaEntrada;
+  @UI:{
+  lineItem: [{ position: 50,
+                   importance: #HIGH }],
+                   identification: [{ position: 50, label: 'Almacenista' }]
+  }
+  Almacenista;
+
+
+}

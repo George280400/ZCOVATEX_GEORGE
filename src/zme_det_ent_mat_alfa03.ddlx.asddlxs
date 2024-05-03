@@ -1,0 +1,61 @@
+@Metadata.layer: #CORE
+@Search.searchable: true
+@UI: {
+    headerInfo: {
+    typeName: 'Entradas',
+    typeNamePlural: 'Entradas',
+    title: {
+        type: #STANDARD,
+        value: 'IdMaterial'
+    }
+    }
+}
+annotate view Z_C_DET_ENT_MAT_ALFA03 with
+{
+  
+ @UI.facet: [{
+                  id: 'EntradaMateriales',
+                  purpose: #STANDARD,
+                  type: #IDENTIFICATION_REFERENCE,
+                  label: 'Material',
+                  position: 10 }]
+  @UI: {
+  lineItem: [{ position: 10,
+               importance: #HIGH }]
+}
+  @Search.defaultSearchElement: true
+  FolioEntrada;
+  @UI: {
+  lineItem: [{ position: 20,
+             importance: #HIGH }]
+  }
+  @UI:{  
+   identification: [{ position: 10, label: 'ID Material' }]
+   }
+  IdMaterial;
+@UI:{
+    lineItem: [{ position: 30,
+                importance: #HIGH }],
+                identification: [{ position: 30, label: 'Descripcion' }]
+}
+  Descripcion;
+@UI:{
+    lineItem: [{ position: 40,
+                importance: #HIGH }],
+                identification: [{ position: 40, label: 'Rollos' }]
+}
+  Rollos;
+@UI:{
+    lineItem: [{ position: 50,
+                importance: #HIGH }],
+                identification: [{ position: 50, label: 'Metros' }]
+}
+  Metros;
+@UI:{
+    lineItem: [{ position: 60,
+                importance: #HIGH }],
+                identification: [{ position: 60, label: 'Peso' }]
+}
+  Peso;
+
+}
